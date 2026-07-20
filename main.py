@@ -18,8 +18,10 @@ client = Groq(api_key=GROQ_API_KEY)
 
 SYSTEM_PROMPT = """
 Tumhara naam Pooja hai.
+
 Hamesha Hindi me baat karo.
 Replies short aur natural rakho.
+Kabhi mat bolna ki tum AI ho.
 """
 
 VIDEO_CALL_PHOTO = "AgACAgUAAxkBAAMmaltzGTIOVVPF1Doz3pZVi9yKjqQAAi8QaxtyI9hWxcBfgTwnw0QBAAMCAAN5AAM9BA"
@@ -28,8 +30,19 @@ VIDEO_CALL_VOICE = "AwACAgUAAxkBAAMJaltyitLk2fpuuxGk2YbWVN-OlmoAAh4jAAIxntlWMQnp
 DEMO_PHOTO = "AgACAgUAAxkBAAMtaltzSL1YKPZ50PVT_jnr5q4oyKQAAjAQaxtyI9hWyTkHcu2Em0YBAAMCAAN5AAM9BA"
 DEMO_VOICE = "AwACAgUAAxkBAAMMaltylnFm_sD79qWUySELvay1pF8AAtsfAAIxnuFW_un299EwpFw9BA"
 
+PROOF_PHOTOS = [
+"AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA",
+"AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA",
+"AgACAgUAAxkBAAMyaltzcv_iYeMC7tZLFIseyyCTTYUAAiwSaxuIFZFWMe-q-eXWXDYBAAMCAAN4AAM9BA",
+"AgACAgUAAxkBAAMzaltzcgiZG6Tr8pk72Hfh9GXSuI4AAi4SaxuIFZFWjMEe6FzBh6wBAAMCAAN5AAM9BA",
+"AgACAgUAAxkBAAM0altzcjtvWm_zJoU7khSVkncuHLkAAi8SaxuIFZFWOjaMN-bVtfoBAAMCAAN5AAM9BA",
+"AgACAgUAAxkBAAM1altzcj-17pCPV4Hf8_d0B3UoaqgAAjASaxuIFZFWq5wK6uW0BXwBAAMCAAN5AAM9BA"
+]
+
+PROOF_VOICE = "AwACAgUAAxkBAAMhaltzCz801S2isRWbjSrY2rA0VgkAAisgAAIxnuFW6duVjhed_q89BA"
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hii 👋")
+    await update.message.reply_text("Hii Baby ❤️")
 
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
@@ -40,33 +53,33 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
             message_id=update.message.message_id,
         )
 
-        await context.bot.send_message(
-            chat_id=ADMIN_ID,
-            text=f"User ID : {update.effective_chat.id}"
-        )
-
         await update.message.reply_text(
-            "✅ Screenshot mil gaya."
+            "✅ Screenshot receive ho gaya."
         )
         return
 
     user_text = update.message.text.lower()
-
+        # Video Call
     if "video call" in user_text or "videocall" in user_text:
         await update.message.reply_photo(VIDEO_CALL_PHOTO)
         await update.message.reply_voice(VIDEO_CALL_VOICE)
         return
 
+    # Demo
     if "demo" in user_text:
         await update.message.reply_photo(DEMO_PHOTO)
         await update.message.reply_voice(DEMO_VOICE)
         return
-            # Proof
+
+    # Proof
     if "proof" in user_text:
-        await update.message.reply_text("Proof available.")
+        for photo in PROOF_PHOTOS:
+            await update.message.reply_photo(photo)
+
+        await update.message.reply_voice(PROOF_VOICE)
         return
 
-    # AI Reply
+    # AI Chat
     try:
         response = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
@@ -81,12 +94,13 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     except Exception as e:
         print(e)
-        await update.message.reply_text("Error aa gaya.")
-        def main():
+        await update.message.reply_text("❌ Error aa gaya, baad me try karo.")
+
+
+def main():
     app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
-
     app.add_handler(
         MessageHandler(
             (filters.TEXT | filters.PHOTO) & ~filters.COMMAND,

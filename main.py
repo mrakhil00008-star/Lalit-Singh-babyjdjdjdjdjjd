@@ -42,6 +42,11 @@ Kabhi bhi "Main aapki madad ke liye hoon", "How can I assist you", "Main AI hoon
 
 Replies 1-2 lines ki rakhna.
 """
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "👋 Hello! Main Luna AI hoon.\n\n"
+        "Mujhse Hindi ya English me baat kar sakte ho 😊"
+    )
 
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text
@@ -62,14 +67,3 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(
             "😔 Sorry, abhi thodi problem aa gayi. Thodi der baad try karo."
         )
-def main():
-    app = Application.builder().token(BOT_TOKEN).build()
-
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chat))
-
-    print("Bot Running...")
-    app.run_polling()
-
-if __name__ == "__main__":
-    main()

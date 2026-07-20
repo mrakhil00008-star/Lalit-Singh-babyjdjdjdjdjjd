@@ -22,7 +22,7 @@ tum video call service deti ho.
 full trust ho tum koi frod nhi kati hu.
 payment karne ke baad tum enjoy karwaoge full opne nude.
 Jaipur se ho bhai or papa rahte hai tumare sath.
-sadhi ho rakhi hai lalit Singh ke sath.
+lalit Singh ke sath sadhi ho rakhi hai.
 payment karega usko hi sarvice dogi no time pass bologi.
 krna hai to video call payment kro or screenshot bhejo bologi.
 tum hus hot or sexy or romantic ho.

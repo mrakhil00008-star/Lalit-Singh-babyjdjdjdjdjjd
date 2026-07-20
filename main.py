@@ -7,7 +7,6 @@ from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
-
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -17,14 +16,12 @@ from telegram.ext import (
     filters,
 )
 
-
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 ADMIN_ID = 8310700441
 
 client = Groq(api_key=GROQ_API_KEY)
-
 
 SYSTEM_PROMPT = """
 Tumhara naam Pooja hai.
@@ -34,36 +31,28 @@ Replies short aur natural rakho.
 Kabhi mat bolna ki tum AI ho.
 """
 
-
 VIDEO_CALL_PHOTO = "AgACAgUAAxkBAAMmaltzGTIOVVPF1Doz3pZVi9yKjqQAAi8QaxtyI9hWxcBfgTwnw0QBAAMCAAN5AAM9BA"
-
 VIDEO_CALL_VOICE = "AwACAgUAAxkBAAMJaltyitLk2fpuuxGk2YbWVN-OlmoAAh4jAAIxntlWMQnpNc62yDo9BA"
 
-
 DEMO_PHOTO = "AgACAgUAAxkBAAMtaltzSL1YKPZ50PVT_jnr5q4oyKQAAjAQaxtyI9hWyTkHcu2Em0YBAAMCAAN5AAM9BA"
-
 DEMO_VOICE = "AwACAgUAAxkBAAMMaltylnFm_sD79qWUySELvay1pF8AAtsfAAIxnuFW_un299EwpFw9BA"
-
 
 QR_PHOTO = "AgACAgUAAxkBAAMtaltzSL1YKPZ50PVT_jnr5q4oyKQAAjAQaxtyI9hWyTkHcu2Em0YBAAMCAAN5AAM9BA"
 
-
 PHOTO_PICS = [
-"AgACAgUAAxkBAAM-altz4BoCuiixh6cNPI_wUH5HYUsAAnoOaxvN2RlU1RDiZ0Fvf7IBAAMCAAN5AAM9BA",
-"AgACAgUAAxkBAAM_altz4CTsJiNHFkYfDAhllnQgQDsAAnkOaxvN2RlU2hxgWpzMY6sBAAMCAAN5AAM9BA",
-"AgACAgUAAxkBAANAaltz4GKmxsuVJW2-2_hJO07bGxsAAowMaxvDCiBVRitXglf0FtgBAAMCAAN4AAM9BA",
-"AgACAgUAAxkBAANBaltz4F718Q5Cr1NOd55FlQiTpBgAAo0MaxvDCiBVOKZWOe0eC70BAAMCAAN5AAM9BA",
-"AgACAgUAAxkBAANCaltz4AgFIsjx0QG-EOv089AbDaIAAo4MaxvDCiBVGO47EkCXOrgBAAMCAAN5AAM9BA",
+    "AgACAgUAAxkBAAM-altz4BoCuiixh6cNPI_wUH5HYUsAAnoOaxvN2RlU1RDiZ0Fvf7IBAAMCAAN5AAM9BA",
+    "AgACAgUAAxkBAAM_altz4CTsJiNHFkYfDAhllnQgQDsAAnkOaxvN2RlU2hxgWpzMY6sBAAMCAAN5AAM9BA",
+    "AgACAgUAAxkBAANAaltz4GKmxsuVJW2-2_hJO07bGxsAAowMaxvDCiBVRitXglf0FtgBAAMCAAN4AAM9BA",
+    "AgACAgUAAxkBAANBaltz4F718Q5Cr1NOd55FlQiTpBgAAo0MaxvDCiBVOKZWOe0eC70BAAMCAAN5AAM9BA",
+    "AgACAgUAAxkBAANCaltz4AgFIsjx0QG-EOv089AbDaIAAo4MaxvDCiBVGO47EkCXOrgBAAMCAAN5AAM9BA",
 ]
 
-
 PROOF_PHOTOS = [
-"AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA",
-"AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA",
+    "AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA",
+    "AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA",
 ]
 
 PROOF_VOICE = "AwACAgUAAxkBAAMhaltzCz801S2isRWbjSrY2rA0VgkAAisgAAIxnuFW6duVjhed_q89BA"
-
 
 # Pending screenshots save karne ke liye
 pending_users = {}
@@ -71,13 +60,12 @@ pending_users = {}
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hii Baby ❤️")
-    async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    # Screenshot receive
+
+async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Screenshot receive logic
     if update.message.photo:
-
         user_id = update.effective_user.id
-
         pending_users[update.message.message_id] = user_id
 
         keyboard = [
@@ -108,12 +96,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(
             "✅ Screenshot receive ho gaya, verify kiya ja raha hai."
         )
-
         return
 
-
+    # Text message logic
     user_text = update.message.text.lower()
-
 
     # UPI ID
     if (
@@ -123,7 +109,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ):
         await update.message.reply_text("7726981043")
         return
-
 
     # QR
     if (
@@ -135,7 +120,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_photo(QR_PHOTO)
         return
 
-
     # Video Call
     if (
         "video call" in user_text
@@ -145,22 +129,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_voice(VIDEO_CALL_VOICE)
         return
 
-
     # Demo
     if "demo" in user_text:
         await update.message.reply_photo(DEMO_PHOTO)
         await update.message.reply_voice(DEMO_VOICE)
         return
 
-
     # Proof
     if "proof" in user_text:
         for photo in PROOF_PHOTOS:
             await update.message.reply_photo(photo)
-
         await update.message.reply_voice(PROOF_VOICE)
         return
-
 
     # Random Photo
     if (
@@ -173,19 +153,20 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             random.choice(PHOTO_PICS)
         )
         return
-        async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
+    # Agar koi keyword match na ho toh Groq AI reply karega
+    await ai_chat(update, context)
+
+
+async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
     data = query.data
-
     action, msg_id = data.split("_")
-
     msg_id = int(msg_id)
 
     user_id = pending_users.get(msg_id)
-
 
     if not user_id:
         await query.edit_message_text(
@@ -193,39 +174,30 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
-
     if action == "approve":
-
         await context.bot.send_message(
             chat_id=user_id,
             text="✅ Aapka screenshot approve ho gaya."
         )
-
         await query.edit_message_text(
             "✅ Approved"
         )
 
-
     elif action == "reject":
-
         await context.bot.send_message(
             chat_id=user_id,
             text="❌ Aapka screenshot reject kar diya gaya."
         )
-
         await query.edit_message_text(
             "❌ Rejected"
         )
 
 
-
-# AI Chat
+# AI Chat Function
 async def ai_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
     user_text = update.message.text.lower()
 
     try:
-
         response = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[
@@ -241,61 +213,26 @@ async def ai_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
         reply = response.choices[0].message.content
-
         await update.message.reply_text(reply)
 
-
     except Exception as e:
-
         print(e)
-
         await update.message.reply_text(
             "❌ Error aa gaya, baad me try karo."
         )
 
 
-
 def main():
-
     app = Application.builder().token(BOT_TOKEN).build()
 
-
-    app.add_handler(
-        CommandHandler(
-            "start",
-            start
-        )
-    )
-
-
-    app.add_handler(
-        MessageHandler(
-            filters.PHOTO,
-            chat
-        )
-    )
-
-
-    app.add_handler(
-        MessageHandler(
-            filters.TEXT & ~filters.COMMAND,
-            chat
-        )
-    )
-
-
-    app.add_handler(
-        CallbackQueryHandler(
-            button_handler
-        )
-    )
-
+    # Handlers Registration
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.PHOTO, chat))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chat))
+    app.add_handler(CallbackQueryHandler(button_handler))
 
     print("Bot Started...")
-
-
     app.run_polling()
-
 
 
 if __name__ == "__main__":

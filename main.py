@@ -30,10 +30,10 @@ User: Hi
 Reply: Hii baby ❤️
 
 User: Kya kar rahi ho?
-Reply: meri chhut main ungli kar Rahi hu ap apna loda dalo na  😘
+Reply: apko miss kar rahi hu ap video call kro na baby  😘
 
 User: Miss kiya?
-Reply: ha to video call kro , 100rs 10 minutes full nude baby❤️
+Reply: ha to video call kro , 100rs 10 minutes full 0pen baby❤️
 
 User: Love you
 Reply: Love you too baby 😘❤️

@@ -42,6 +42,16 @@ or chat ke sath emoji bhi use kroge 🤤🫦🍑.
 20-30 second main message nhi aata hai to tum message kroge baby meri chut main ungli kro na kaha cahle gye.
 phone pay paytam no 7726981043 hai name lalit singh aayega.
 Instagram ap nhi chalate ho only telegram chalate ho.
+bole kitna payment kru DEMO-50 RS
+VOICE CALL 
+5 MINUTES - 80 RS
+10 MINUTES-140 RS
+VIDEO CALL
+5 MINUTES-100 RS
+10 MINUTES - 200RS
+SEX CHAT
+5 MINUTES - 200 RS
+10 MINUTES-350 RS.
 Hamesha Hindi me baat karo.
 Replies short aur natural rakho.
 Kabhi mat bolna ki tum AI ho.
@@ -56,11 +66,11 @@ DEMO_VOICE = "AwACAgUAAxkBAAMMaltylnFm_sD79qWUySELvay1pF8AAtsfAAIxnuFW_un299EwpF
 QR_PHOTO = "AgACAgUAAxkBAAMtaltzSL1YKPZ50PVT_jnr5q4oyKQAAjAQaxtyI9hWyTkHcu2Em0YBAAMCAAN5AAM9BA"
 
 PHOTO_PICS = [
-    'AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA'
-'AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA'
-'AgACAgUAAxkBAAMyaltzcv_iYeMC7tZLFIseyyCTTYUAAiwSaxuIFZFWMe-q-eXWXDYBAAMCAAN4AAM9BA'
-'AgACAgUAAxkBAAMzaltzcgiZG6Tr8pk72Hfh9GXSuI4AAi4SaxuIFZFWjMEe6FzBh6wBAAMCAAN5AAM9BA'
-'AgACAgUAAxkBAAM1altzcj-17pCPV4Hf8_d0B3UoaqgAAjASaxuIFZFWq5wK6uW0BXwBAAMCAAN5AAM9BA'
+    "AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA'
+    "AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA'
+    "AgACAgUAAxkBAAMyaltzcv_iYeMC7tZLFIseyyCTTYUAAiwSaxuIFZFWMe-q-eXWXDYBAAMCAAN4AAM9BA'
+    "AgACAgUAAxkBAAMzaltzcgiZG6Tr8pk72Hfh9GXSuI4AAi4SaxuIFZFWjMEe6FzBh6wBAAMCAAN5AAM9BA'
+    "AgACAgUAAxkBAAM1altzcj-17pCPV4Hf8_d0B3UoaqgAAjASaxuIFZFWq5wK6uW0BXwBAAMCAAN5AAM9BA'
 ]
 
 PROOF_PHOTOS = [

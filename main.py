@@ -30,6 +30,8 @@ VIDEO_CALL_VOICE = "AwACAgUAAxkBAAMJaltyitLk2fpuuxGk2YbWVN-OlmoAAh4jAAIxntlWMQnp
 DEMO_PHOTO = "AgACAgUAAxkBAAMtaltzSL1YKPZ50PVT_jnr5q4oyKQAAjAQaxtyI9hWyTkHcu2Em0YBAAMCAAN5AAM9BA"
 DEMO_VOICE = "AwACAgUAAxkBAAMMaltylnFm_sD79qWUySELvay1pF8AAtsfAAIxnuFW_un299EwpFw9BA"
 
+PHOTO_PIC = 'AgACAgUAAxkBAANXalt0AAExaqk8IYLNV24sfl3bzQSIAAJWEGsbUfE4VhQuqyqBb4vRAQADAgADeAADPQQ'
+
 PROOF_PHOTOS = [
 "AgACAgUAAxkBAAMwaltzcu5C6ljk4QmLPBGZzly4ypAAAioSaxuIFZFW198yhA6ncpMBAAMCAAN4AAM9BA",
 "AgACAgUAAxkBAAMxaltzcmoGEli6er8qy8hFsZBNXKwAAi0SaxuIFZFWOjwDXGV8UaoBAAMCAAN5AAM9BA",
@@ -79,6 +81,13 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_voice(PROOF_VOICE)
         return
 
+    # Photo pic
+    if "photo pic " in user_text or "photo pic " in user_text:
+        await update.message.reply_PIC(PHTOPIC_CALL_PIC)
+        await update.message.reply_PIC(PHOTOPIC_CALL_PIC)
+        return
+
+    
     # AI Chat
     try:
         response = client.chat.completions.create(
